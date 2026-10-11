@@ -1,1 +1,2 @@
-
+{"action":"station.updated","entityId":1,"changes":{"name":{"old":"Brussels","new":"Brussels Central"}}}
+{"action":"station.updated","entityId":2,"changes":{"position":{"old":[500,64,100],"new":[300,64,100]}}}
