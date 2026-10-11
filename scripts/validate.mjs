@@ -6,7 +6,9 @@ const schema = JSON.parse(
   fs.readFileSync("schemas/network.v1.schema.json", "utf8"),
 );
 
-const network = JSON.parse(fs.readFileSync("data/network.v1.json", "utf8"));
+const networkPath = process.argv[2] ?? "data/network.v1.json";
+
+const network = JSON.parse(fs.readFileSync(networkPath, "utf8"));
 
 const ajv = new Ajv2020({ allErrors: true });
 addFormats(ajv);
