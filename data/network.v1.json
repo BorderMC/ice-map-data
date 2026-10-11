@@ -16,7 +16,7 @@
   "stations": [
     {
       "id": 1,
-      "name": "Brussels Central",
+      "name": "Brussels",
       "type": "station",
       "position": [100, 64, 100]
     },
