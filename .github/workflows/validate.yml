@@ -49,6 +49,7 @@ jobs:
 
     permissions:
       contents: write
+      statuses: write
 
     steps:
       - name: Checkout trusted main branch
@@ -91,7 +92,16 @@ jobs:
             /tmp/audit-base.jsonl \
             /tmp/audit-generated.jsonl
 
+      - name: Verify generated audit
+        run: |
+          node scripts/verify-audit.mjs \
+            /tmp/network-base.json \
+            /tmp/network-proposed.json \
+            /tmp/audit-base.jsonl \
+            /tmp/audit-generated.jsonl
+
       - name: Commit generated audit
+        id: commit
         env:
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           HEAD_BRANCH: ${{ github.event.pull_request.head.ref }}
@@ -102,6 +112,7 @@ jobs:
 
           if git diff --quiet -- data/audit.v1.jsonl; then
             echo "Audit already up to date."
+            echo "sha=$HEAD_SHA" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -113,3 +124,17 @@ jobs:
           git commit -m "chore: update network audit"
 
           git push origin "HEAD:refs/heads/$HEAD_BRANCH"
+
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Publish integrity status
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FINAL_SHA: ${{ steps.commit.outputs.sha }}
+        run: |
+          gh api \
+            --method POST \
+            "repos/${GITHUB_REPOSITORY}/statuses/${FINAL_SHA}" \
+            -f state=success \
+            -f context=ice-map/integrity \
+            -f description="Network and audit verified"
