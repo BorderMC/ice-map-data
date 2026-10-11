@@ -16,7 +16,7 @@
   "stations": [
     {
       "id": 1,
-      "name": "Brussels",
+      "name": "Brussels Central",
       "type": "station",
       "position": [100, 64, 100]
     },
@@ -24,7 +24,7 @@
       "id": 2,
       "name": "Ghent",
       "type": "station",
-      "position": [500, 64, 100]
+      "position": [300, 64, 100]
     }
   ],
   "lines": [
