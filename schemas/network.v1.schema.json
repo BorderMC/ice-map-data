@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/BorderMC/ice-map-data/main/schemas/network.v1.schema.json",
+  "title": "Ice Road Network",
+  "description": "Network data for the official ice road highways of BorderMC",
+  "type": "object",
+  "required": ["version", "revision", "companies", "stations", "lines"],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Version of the network data format."
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Revision number of the ice road network data."
+    },
+    "companies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/company"
+      }
+    },
+    "stations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/station"
+      }
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/line"
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "position": {
+      "type": "array",
+      "description": "Minecraft coordinates in X, Y, Z order.",
+      "prefixItems": [
+        { "type": "number" },
+        { "type": "number" },
+        { "type": "number" }
+      ],
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "company": {
+      "type": "object",
+      "required": ["id", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "discord": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "station": {
+      "type": "object",
+      "required": ["id", "name", "type", "position"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "enum": ["station", "junction", "interchange", "elevator"]
+        },
+        "position": {
+          "$ref": "#/$defs/position"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "line": {
+      "type": "object",
+      "required": ["id", "name", "company", "color", "stations", "points"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "company": {
+          "$ref": "#/$defs/id",
+          "description": "ID of the operating company."
+        },
+        "color": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "stations": {
+          "type": "array",
+          "description": "Ordered IDs of stations along the line.",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "points": {
+          "type": "array",
+          "description": "Ordered coordinates forming the road path.",
+          "items": {
+            "$ref": "#/$defs/position"
+          },
+          "minItems": 2
+        }
+      }
+    }
+  }
+}
