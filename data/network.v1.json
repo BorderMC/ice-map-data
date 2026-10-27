@@ -4,39 +4,254 @@
   "companies": [
     {
       "id": 1,
-      "name": "BorderMC B.V.",
-      "discord": "https://discord.gg/bordermc"
+      "name": "UNITY",
+      "discord": "https://discord.gg/bEXGMN7yRQ"
     },
     {
       "id": 2,
-      "name": "Iceroad Works",
-      "discord": "https://discord.gg/iceroadworks"
+      "name": "Solo-Built"
     }
   ],
   "stations": [
     {
       "id": 1,
-      "name": "Brussels",
-      "type": "station",
-      "position": [100, 64, 100]
+      "name": "Riverside -44",
+      "type": "Station",
+      "position": [
+        -3298,
+        -44,
+        1967
+      ]
     },
     {
       "id": 2,
-      "name": "Ghent",
-      "type": "station",
-      "position": [300, 64, 100]
+      "name": "Subocto City",
+      "type": "Station",
+      "position": [
+        -2206,
+        -44,
+        -1230
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Cernavod Station & JCT",
+      "type": "Junction",
+      "position": [
+        -3298,
+        -44,
+        440
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Island -44",
+      "type": "Station",
+      "position": [
+        2820,
+        -44,
+        1220
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Subocto West Junction",
+      "type": "Junction",
+      "position": [
+        -3298,
+        -44,
+        -1230
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Duckwurtle",
+      "type": "Station",
+      "position": [
+        4929,
+        -44,
+        2654
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Solaria Stop",
+      "type": "Station",
+      "position": [
+        4941,
+        64,
+        1766
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Aldi Station & JCT",
+      "type": "Junction",
+      "position": [
+        4941,
+        64,
+        1090
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Krasnograd",
+      "type": "Station",
+      "position": [
+        4094,
+        64,
+        1090
+      ]
+    },
+    {
+      "id": 10,
+      "name": "New Wichita",
+      "type": "Station",
+      "position": [
+        5770,
+        64,
+        1090
+      ]
     }
   ],
   "lines": [
     {
       "id": 1,
-      "name": "Belgian Express",
+      "name": "Archipelago Line",
       "company": 1,
-      "color": "#FFAA00",
-      "stations": [1, 2],
+      "color": "#00ffe1",
+      "stations": [
+        1,
+        2,
+        3,
+        5
+      ],
       "points": [
-        [100, 64, 100],
-        [900, 64, 100]
+        [
+          -2206,
+          -44,
+          -1230
+        ],
+        [
+          -3298,
+          -44,
+          -1230
+        ],
+        [
+          -3298,
+          -44,
+          1967
+        ]
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Continental Line",
+      "company": 2,
+      "color": "#ddf77d",
+      "stations": [
+        3
+      ],
+      "points": [
+        [
+          -3298,
+          -44,
+          440
+        ],
+        [
+          77,
+          -44,
+          439
+        ],
+        [
+          77,
+          -44,
+          1220
+        ],
+        [
+          2820,
+          -44,
+          1220
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Grand Line Underground",
+      "company": 1,
+      "color": "#ff9a47",
+      "stations": [],
+      "points": [
+        [
+          4929,
+          -44,
+          2654
+        ],
+        [
+          4929,
+          64,
+          1158
+        ]
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Grand Line",
+      "company": 1,
+      "color": "#d772e4",
+      "stations": [
+        6,
+        7,
+        8,
+        10,
+        9
+      ],
+      "points": [
+        [
+          4928,
+          64,
+          2654
+        ],
+        [
+          4941,
+          64,
+          2654
+        ],
+        [
+          4941,
+          64,
+          1090
+        ],
+        [
+          5770,
+          64,
+          1090
+        ],
+        [
+          2882,
+          64,
+          1090
+        ],
+        [
+          2882,
+          64,
+          4200
+        ],
+        [
+          3038,
+          64,
+          4200
+        ],
+        [
+          2882,
+          64,
+          4200
+        ],
+        [
+          2882,
+          64,
+          4544
+        ]
       ]
     }
   ]
