@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 1,
+  "revision": 0,
   "companies": [
     {
       "id": 1,
@@ -16,102 +16,62 @@
     {
       "id": 1,
       "name": "Riverside -44",
-      "type": "Station",
-      "position": [
-        -3298,
-        -44,
-        1967
-      ]
+      "type": "station",
+      "position": [-3298, -44, 1967]
     },
     {
       "id": 2,
       "name": "Subocto City",
-      "type": "Station",
-      "position": [
-        -2206,
-        -44,
-        -1230
-      ]
+      "type": "station",
+      "position": [-2206, -44, -1230]
     },
     {
       "id": 3,
       "name": "Cernavod Station & JCT",
-      "type": "Junction",
-      "position": [
-        -3298,
-        -44,
-        440
-      ]
+      "type": "junction",
+      "position": [-3298, -44, 440]
     },
     {
       "id": 4,
       "name": "Island -44",
-      "type": "Station",
-      "position": [
-        2820,
-        -44,
-        1220
-      ]
+      "type": "station",
+      "position": [2820, -44, 1220]
     },
     {
       "id": 5,
       "name": "Subocto West Junction",
-      "type": "Junction",
-      "position": [
-        -3298,
-        -44,
-        -1230
-      ]
+      "type": "junction",
+      "position": [-3298, -44, -1230]
     },
     {
       "id": 6,
       "name": "Duckwurtle",
-      "type": "Station",
-      "position": [
-        4929,
-        -44,
-        2654
-      ]
+      "type": "station",
+      "position": [4929, -44, 2654]
     },
     {
       "id": 7,
       "name": "Solaria Stop",
-      "type": "Station",
-      "position": [
-        4941,
-        64,
-        1766
-      ]
+      "type": "station",
+      "position": [4941, 64, 1766]
     },
     {
       "id": 8,
       "name": "Aldi Station & JCT",
-      "type": "Junction",
-      "position": [
-        4941,
-        64,
-        1090
-      ]
+      "type": "junction",
+      "position": [4941, 64, 1090]
     },
     {
       "id": 9,
       "name": "Krasnograd",
-      "type": "Station",
-      "position": [
-        4094,
-        64,
-        1090
-      ]
+      "type": "station",
+      "position": [4094, 64, 1090]
     },
     {
       "id": 10,
       "name": "New Wichita",
-      "type": "Station",
-      "position": [
-        5770,
-        64,
-        1090
-      ]
+      "type": "station",
+      "position": [5770, 64, 1090]
     }
   ],
   "lines": [
@@ -120,28 +80,11 @@
       "name": "Archipelago Line",
       "company": 1,
       "color": "#00ffe1",
-      "stations": [
-        1,
-        2,
-        3,
-        5
-      ],
+      "stations": [1, 2, 3, 5],
       "points": [
-        [
-          -2206,
-          -44,
-          -1230
-        ],
-        [
-          -3298,
-          -44,
-          -1230
-        ],
-        [
-          -3298,
-          -44,
-          1967
-        ]
+        [-2206, -44, -1230],
+        [-3298, -44, -1230],
+        [-3298, -44, 1967]
       ]
     },
     {
@@ -149,30 +92,12 @@
       "name": "Continental Line",
       "company": 2,
       "color": "#ddf77d",
-      "stations": [
-        3
-      ],
+      "stations": [3],
       "points": [
-        [
-          -3298,
-          -44,
-          440
-        ],
-        [
-          77,
-          -44,
-          439
-        ],
-        [
-          77,
-          -44,
-          1220
-        ],
-        [
-          2820,
-          -44,
-          1220
-        ]
+        [-3298, -44, 440],
+        [77, -44, 439],
+        [77, -44, 1220],
+        [2820, -44, 1220]
       ]
     },
     {
@@ -182,16 +107,8 @@
       "color": "#ff9a47",
       "stations": [],
       "points": [
-        [
-          4929,
-          -44,
-          2654
-        ],
-        [
-          4929,
-          64,
-          1158
-        ]
+        [4929, -44, 2654],
+        [4929, 64, 1158]
       ]
     },
     {
@@ -199,59 +116,17 @@
       "name": "Grand Line",
       "company": 1,
       "color": "#d772e4",
-      "stations": [
-        6,
-        7,
-        8,
-        10,
-        9
-      ],
+      "stations": [6, 7, 8, 10, 9],
       "points": [
-        [
-          4928,
-          64,
-          2654
-        ],
-        [
-          4941,
-          64,
-          2654
-        ],
-        [
-          4941,
-          64,
-          1090
-        ],
-        [
-          5770,
-          64,
-          1090
-        ],
-        [
-          2882,
-          64,
-          1090
-        ],
-        [
-          2882,
-          64,
-          4200
-        ],
-        [
-          3038,
-          64,
-          4200
-        ],
-        [
-          2882,
-          64,
-          4200
-        ],
-        [
-          2882,
-          64,
-          4544
-        ]
+        [4928, 64, 2654],
+        [4941, 64, 2654],
+        [4941, 64, 1090],
+        [5770, 64, 1090],
+        [2882, 64, 1090],
+        [2882, 64, 4200],
+        [3038, 64, 4200],
+        [2882, 64, 4200],
+        [2882, 64, 4544]
       ]
     }
   ]
