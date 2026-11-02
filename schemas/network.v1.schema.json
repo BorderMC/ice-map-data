@@ -120,7 +120,6 @@
           "items": {
             "$ref": "#/$defs/id"
           },
-          "minItems": 2,
           "uniqueItems": true
         },
         "points": {
